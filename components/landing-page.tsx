@@ -155,7 +155,7 @@ return (
             {[1, 2, 3, 4, 5].map((avatar) => (
               <Image
                 key={avatar}
-                src={`/placeholder.svg?height=32&width=32`}
+                src={`/images/avatar${avatar}.webp`}
                 alt={`User avatar ${avatar}`}
                 width={32}
                 height={32}
@@ -444,7 +444,7 @@ return (
         </div>
         <div>
           <Image src="/images/toolpilot.svg?height=48&width=48" alt="TP Logo" width={48} height={48} />
-          <Image src="/images/aitoolnet.svg?height=48&width=48" alt="AIChatOne Logo" width={264} height={96} className="mt-4" />
+          <Image src="/images/aitoolnet.svg?height=48&width=48" alt="AIChatOne Logo" width={2640} height={96} className="mt-4" />
           <Image src="/images/theresanaiforthat.avif?height=48&width=48" alt="There's an AI for That Logo" width={264} height={96} className="mt-4" />
         </div>
       </div>
