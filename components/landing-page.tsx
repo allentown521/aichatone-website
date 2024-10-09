@@ -107,7 +107,7 @@ const t = translations[language as keyof typeof translations]
 
 return (
   <div className="flex flex-col min-h-screen">
-    <header className="flex items-center justify-between p-4 sticky top-0 bg-white z-10 shadow-sm">
+    <header className="flex items-center justify-between p-4 sticky top-0 bg-white/80 backdrop-blur-md z-10 shadow-sm">
       <div className="flex items-center space-x-2">
         <Image src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
         <span className="text-xl font-bold">AIChatOne</span>
@@ -149,7 +149,7 @@ return (
     <main className="flex-grow">
       <section id="home" className="text-center py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
         <h1 className="text-5xl font-bold mb-4 text-purple-800">All-in-One AI Assistant</h1>
-        <p className="text-xl text-gray-600 mb-8">Personal, Fast, and Free</p>
+        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatOne is an all-in-one AI assistant with the most advanced AI models (GPT-4, Claude 3, Gemini, etc.) to help you Chat, Search, Write, Read and more. </p>
         <div className="flex justify-center items-center space-x-2 mb-8">
           <div className="flex -space-x-2 mr-2">
             {[1, 2, 3, 4, 5].map((avatar) => (
