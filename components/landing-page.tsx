@@ -109,7 +109,7 @@ return (
   <div className="flex flex-col min-h-screen">
     <header className="flex items-center justify-between p-4 sticky top-0 bg-white z-10 shadow-sm">
       <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 bg-purple-600 rounded-full" />
+        <Image src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
         <span className="text-xl font-bold">AIChatOne</span>
       </div>
       <nav className="hidden md:flex space-x-4">
@@ -173,10 +173,21 @@ return (
           <Button variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-50 px-8 py-3 rounded-full text-lg">Watch demo</Button>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
-          {["Chrome", "Edge", "Firefox", "Safari", "Opera"].map((browser) => (
-            <Button key={browser} variant="outline" className="bg-white hover:bg-gray-50 shadow-sm">
-              <Image src="/placeholder.svg?height=24&width=24" alt={`${browser} logo`} width={24} height={24} className="mr-2" />
-              Add to {browser}
+          {[
+            { name: "Add to Chrome", imageSrc: "/images/chrome.png", url: "https://chrome.google.com/webstore/detail/ejlkdnjeljojepglcdjifkedjbfdakbb" },
+            { name: "Add to Edge", imageSrc: "/images/edge.png", url: "https://microsoftedge.microsoft.com/addons/detail/aichatone-your-ai-copil/gpophbebhcadnhofieemjpbkkiannbeb" },
+            { name: "Web App", imageSrc: "/images/internet.png", url: "https://web.aichatone.com/" },
+            { name: "Windows", imageSrc: "/images/windows.png", url: "https://github.com/allentown521/AIChatOne-archive/releases" },
+            { name: "Mac", imageSrc: "/images/mac.png", url: "https://github.com/allentown521/AIChatOne-archive/releases" }
+          ].map((browser) => (
+            <Button
+              key={browser.name}
+              variant="outline"
+              className="bg-white hover:bg-gray-50 shadow-sm"
+              onClick={() => window.open(browser.url, '_blank')}
+            >
+              <Image src={browser.imageSrc} alt={`${browser.name} logo`} width={24} height={24} className="mr-2" />
+              Add to {browser.name}
             </Button>
           ))}
         </div>
