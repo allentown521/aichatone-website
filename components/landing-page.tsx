@@ -4,8 +4,20 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CheckIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, MessageCircleIcon, SearchIcon, ImageIcon, MicIcon, FolderIcon, UploadIcon, PlugIcon, PenToolIcon, GlobeIcon } from "lucide-react"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Script from 'next/script'
+
+// 添加 Google Analytics 跟踪代码
+const GA_TRACKING_ID = 'G-F6D56ZXKCM' // 替换为您的 Google Analytics 跟踪 ID
+
+// 添加 pageview 函数
+const pageview = (url: string) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('config', GA_TRACKING_ID, {
+      page_path: url,
+    })
+  }
+}
 
 // Define the translations
 const translations = {
@@ -63,6 +75,17 @@ export function LandingPageComponent() {
 const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 const [language, setLanguage] = useState('English')
 
+useEffect(() => {
+  const handleScroll = () => {
+  }
+
+  window.addEventListener('scroll', handleScroll)
+
+  // 添加 Google Analytics 页面浏览跟踪
+  pageview(window.location.pathname)
+
+  return () => window.removeEventListener('scroll', handleScroll)
+}, [])
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
@@ -299,23 +322,54 @@ return (
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Frequently Asked Questions</h2>
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
           {[
-            "Is AIChatOne free to use?",
-            "How does AIChatOne compare to ChatGPT?",
-            "Can I use AIChatOne for commercial purposes?",
-            "What AI models does AIChatOne support?",
-            "How secure is my data with AIChatOne?",
-            "Can I customize the AI's responses?",
-            "Is there a mobile app for AIChatOne?",
-            "How often is AIChatOne updated?",
-            "Can I integrate AIChatOne with other tools?",
-            "What languages does AIChatOne support?",
-          ].map((question, index) => (
+            {
+              question: "What is AIChatOne?",
+              answer: "AIChatOne is free a chrome extension powered by ChatGPT API, designed to be your personal AI assistant for effortless chatting and copywriting."
+            },
+            {
+              question: "Is AIChatOne the same as ChatGPT?",
+              answer: "Yes! But better. AIChatOne uses OpenAI’s ChatGPT (GPT-4) API to interface with ChatGPT for you. So you get all the power of the worlds most advanced AI with additional tools and utilities to skyrocket your productivity"
+            },
+            {
+              question: "Is AIChatOne free?",
+              answer: "Yes, most features of AIChatOne is free to use, and we also have premium plans"
+            },
+            {
+              question: "Do I need a ChatGPT account to use AIChatOne?",
+              answer: "Yes, we do not provide an OpenAI API key"
+            },
+            {
+              question: "How can i use AIChatOne?",
+              answer: "Simply hit Cmd/Ctrl+B to open sidebar or  Cmd/Ctrl+M to open full chat page ,then start chatting with her"
+            },
+            {
+              question: "What chatbots does AIChatOne offer access to?",
+              answer: "AIChatOne currently supports ChatGPT, Bing Copilot, Google Gemini, Claude and 10+ open-source chatbots"
+            },
+            {
+              question: "What browsers does AIChatOne support?",
+              answer: "AIChatOne works on all Chromium-based browsers, including Chrome, Edge, Brave etc."
+            },
+            {
+              question: "Can I get a refund?",
+              answer: "Absolutely. If for any reason you're not satisfied with your purchase, you can request a refund within 14 days of purchase"
+            },
+            {
+              question: "Is my data protected?",
+              answer: "Absolutely. AIChatOne operates locally on your device, and no user input or prompts are stored or sent to us. Your OpenAI API key is securely stored in local"
+            },
+            {
+              question: "Do you offer team plan license?",
+              answer: "Yes, we do! If you're interested in obtaining a team license, please contact us directly via email product@aichatone.com"
+            },
+            // ... add more questions and answers as needed
+          ].map((faq, index) => (
             <div key={index} className="mb-6 border-b border-gray-200 last:border-b-0">
               <button
                 className="flex justify-between items-center w-full text-left font-semibold p-4 hover:bg-gray-50 transition-colors duration-200"
                 onClick={() => toggleFAQ(index)}
               >
-                <span>{question}</span>
+                <span>{faq.question}</span>
                 {openFAQ === index ? (
                   <ChevronUpIcon className="w-5 h-5 text-purple-600" />
                 ) : (
@@ -324,11 +378,7 @@ return (
               </button>
               {openFAQ === index && (
                 <div className="p-4 bg-gray-50 rounded-b-lg">
-                  <p className="text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat.
-                  </p>
+                  <p className="text-gray-600">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -342,54 +392,54 @@ return (
           <h4 className="font-semibold mb-4 text-lg text-purple-800">Features</h4>
           <h5 className="font-medium mb-2 text-gray-700">AI Tools</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="#" className="hover:text-purple-600">Ask GPT-4</a></li>
-            <li><a href="#" className="hover:text-purple-600">Ask Multiple AIs</a></li>
+            <li><a href="https://blog.aichatone.com/blog/how-to-access-gpt4-for-free" className="hover:text-purple-600">Ask GPT-4</a></li>
+            <li><a href="https://blog.aichatone.com/blog/how-to-chat-with-all-chatbots" className="hover:text-purple-600">Ask Multiple AIs</a></li>
           </ul>
         </div>
         <div>
           <h5 className="font-medium mb-2 text-gray-700">Productivity</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="#" className="hover:text-purple-600">Search Agent</a></li>
-            <li><a href="#" className="hover:text-purple-600">Search Enhance</a></li>
-            <li><a href="#" className="hover:text-purple-600">Twitter (X) Agent</a></li>
-            <li><a href="#" className="hover:text-purple-600">Reddit Agent</a></li>
+            <li><a href="#https://blog.aichatone.com/blog/search-agent-better-faster-way-to-write" className="hover:text-purple-600">Search Agent</a></li>
+            <li><a href="https://blog.aichatone.com/blog/search-enhance-with-chatgpt" className="hover:text-purple-600">Search Enhance</a></li>
+            <li><a href="https://blog.aichatone.com/blog/how-to-utilize-ai-for-10x-growth-twitter-x" className="hover:text-purple-600">Twitter (X) Agent</a></li>
+            <li><a href="https://blog.aichatone.com/blog/how-to-utilize-ai-for-10x-growth-reddit" className="hover:text-purple-600">Reddit Agent</a></li>
           </ul>
         </div>
         <div>
           <h5 className="font-medium mb-2 text-gray-700">Summary</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="#" className="hover:text-purple-600">Youtube Summary</a></li>
-            <li><a href="#" className="hover:text-purple-600">Web Summary</a></li>
+            <li><a href="https://blog.aichatone.com/blog/youtube-summary-with-chatgpt" className="hover:text-purple-600">Youtube Summary</a></li>
+            <li><a href="https://blog.aichatone.com/blog/webpage-summary-with-chatgpt" className="hover:text-purple-600">Web Summary</a></li>
           </ul>
           <h5 className="font-medium mb-2 mt-4 text-gray-700">Comparisons</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="#" className="hover:text-purple-600">ChatHub vs AIChatOne</a></li>
-            <li><a href="#" className="hover:text-purple-600">Chatbox vs AIChatOne</a></li>
-            <li><a href="#" className="hover:text-purple-600">TypingMind vs AIChatOne</a></li>
-            <li><a href="#" className="hover:text-purple-600">Which Product to Choose</a></li>
+            <li><a href="https://blog.aichatone.com/blog/chathub-alternative" className="hover:text-purple-600">ChatHub vs AIChatOne</a></li>
+            <li><a href="https://blog.aichatone.com/blog/chatbox-alternative" className="hover:text-purple-600">Chatbox vs AIChatOne</a></li>
+            <li><a href="https://blog.aichatone.com/blog/typingmind-alternative" className="hover:text-purple-600">TypingMind vs AIChatOne</a></li>
+            <li><a href="https://blog.aichatone.com/blog/choose-a-gpt-wrapper" className="hover:text-purple-600">Which Product to Choose</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-4 text-lg text-purple-800">Company</h4>
           <ul className="text-sm text-gray-600 space-y-2">
-            <li><a href="#" className="hover:text-purple-600">Help Center</a></li>
-            <li><a href="#" className="hover:text-purple-600">Pricing</a></li>
-            <li><a href="#" className="hover:text-purple-600">AIChatOne Blog</a></li>
-            <li><a href="#" className="hover:text-purple-600">Docs</a></li>
-            <li><a href="#" className="hover:text-purple-600">Contact Us</a></li>
-            <li><a href="#" className="hover:text-purple-600">Other Apps</a></li>
-            <li><a href="#" className="hover:text-purple-600">Twitter (X)</a></li>
-            <li><a href="#" className="hover:text-purple-600">Affiliates</a></li>
-            <li><a href="#" className="hover:text-purple-600">Privacy Policy</a></li>
+            <li><a href="https://aichatone.canny.io/" className="hover:text-purple-600">Help Center</a></li>
+            <li><a href="https://docs.aichatone.com/getting-started/get-started-with-aichatone" className="hover:text-purple-600">Pricing</a></li>
+            <li><a href="https://blog.aichatone.com/" className="hover:text-purple-600">AIChatOne Blog</a></li>
+            <li><a href="https://docs.aichatone.com/" className="hover:text-purple-600">Docs</a></li>
+            <li><a href="mailto://product@aichatone.com" className="hover:text-purple-600">Contact Us</a></li>
+            <li><a href="https://focus.hk.cn/" className="hover:text-purple-600">Other Apps</a></li>
+            <li><a href="https://twitter.com/allentown521" className="hover:text-purple-600">Twitter (X)</a></li>
+            <li><a href="https://shop.aichatone.com/affiliates" className="hover:text-purple-600">Affiliates</a></li>
+            <li><a href="https://sites.google.com/view/privacypolicyofaichatone" className="hover:text-purple-600">Privacy Policy</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-4 text-lg text-purple-800">Friends</h4>
           <ul className="text-sm text-gray-600 space-y-2">
-            <li><a href="#" className="hover:text-purple-600">toolpilot</a></li>
-            <li><a href="#" className="hover:text-purple-600">aitoolnet</a></li>
-            <li><a href="#" className="hover:text-purple-600">dang.ai</a></li>
-            <li><a href="#" className="hover:text-purple-600">theresanaifothat</a></li>
+            <li><a href="https://www.toolpilot.ai/?utm_source=aichatone/" className="hover:text-purple-600">toolpilot</a></li>
+            <li><a href="https://www.aitoolnet.com/?utm_source=aichatone/" className="hover:text-purple-600">aitoolnet</a></li>
+            <li><a href="https://www.dang.ai/?utm_source=aichatone/" className="hover:text-purple-600">dang.ai</a></li>
+            <li><a href="https://theresanaiforthat.com/ai/aichatone/?ref=featured&v=1002170" className="hover:text-purple-600">theresanaiforthat</a></li>
           </ul>
         </div>
         <div>
