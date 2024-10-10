@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,8 +16,29 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AIChatOne : ALL-In-One ChatGPT Copilot & chathub & chatbox",
-  description: "AIChatOne: Free Chrome extension for interactive chats with ChatGPT, Gemini, Claude, and Bing Copilot. Enjoy seamless AI conversations and switch between Typingmind, Chathub, and Chatbox to enhance entertainment, information sourcing, or productivity.",
+  title: "AI Chat One - Chat with AI Models",
+  description: "Free Chrome extension for interactive chats with ChatGPT, Gemini, Claude, and Bing Copilot. Enjoy seamless AI conversations and switch between Typingmind, Chathub, and Chatbox to enhance entertainment, information sourcing, or productivity.",
+  keywords: "AIChatOne,ai chatone, aichatone web, Chrome extension, aichatone windows, aichatone mac, ChatGPT, Gemini, Claude, Bing Copilot, AI conversations, Typingmind, Chathub, Chatbox, chatbox desktop, chatbox windows, chat hub, chat box",
+  // Add the canonical URL here
+  alternates: {
+    canonical: 'https://aichatone.com/',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://aichatone.com/',
+    title: 'AIChatOne : ALL-In-One ChatGPT Copilot & chathub & chatbox',
+    description: 'Free Chrome extension for interactive chats with ChatGPT, Gemini, Claude, and Bing Copilot. Enjoy seamless AI conversations and switch between Typingmind, Chathub, and Chatbox to enhance entertainment, information sourcing, or productivity',
+    siteName: 'AIChatOne',
+    images: [
+      {
+        url: 'https://aichatone.com/og-image.jpg', // 替换为你的实际 OG 图片 URL
+        width: 1200,
+        height: 630,
+        alt: 'AI Chat One Preview',
+      },
+    ],
+  },
+  // ... other existing metadata ...
 };
 
 export default function RootLayout({

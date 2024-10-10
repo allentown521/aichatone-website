@@ -149,7 +149,7 @@ return (
     <main className="flex-grow">
       <section id="home" className="text-center py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
         <h1 className="text-5xl font-bold mb-4 text-purple-800">All-in-One AI Assistant</h1>
-        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatOne is an all-in-one AI assistant with the most advanced AI models (GPT-4, Claude 3, Gemini, etc.) to help you Chat, Search, Write, Read and more. </p>
+        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatOne is an all-in-one AI assistant with the most advanced AI models (GPT-4, Claude 3, Gemini, etc.) to help you Chat, Search, Write, Read and more</p>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2 mb-8">
           <div className="flex -space-x-2">
             {[1, 2, 3, 4, 5].map((avatar) => (
@@ -196,6 +196,7 @@ return (
       </section>
       <section id="features" className="py-20 px-4 bg-gray-50">
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">The Best AI Chatbots + Powerful Tools</h2>
+        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatone gives you access to the worlds most advanced AI chabot models—not just one! You also get powerful features to add even more fuel to your AI-powered aresenal</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
             { title: "Multiple AI Models", icon: <MessageCircleIcon className="w-8 h-8 text-purple-600" />, description: "Access various AI models for diverse capabilities" },
