@@ -101,7 +101,7 @@ return (
               <button
                 key={key}
                 onClick={() => {
-                  changeLanguage(key)
+                  changeLanguage(key as Locale)
                   document.getElementById('language-menu')?.classList.add('hidden')
                 }}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left"
