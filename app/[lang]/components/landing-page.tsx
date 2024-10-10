@@ -123,7 +123,7 @@ return (
             {[1, 2, 3, 4, 5].map((avatar) => (
               <Image
                 key={avatar}
-                src={`/images/avatar${avatar}.webp`}
+                src="/images/avatar1.webp"
                 alt={`User avatar ${avatar}`}
                 width={32}
                 height={32}
