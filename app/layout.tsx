@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";
-import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,6 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "AI Chat One - Chat with AI Models",
+  robots: "max-image-preview:large",
   description: "Free Chrome extension for interactive chats with ChatGPT, Gemini, Claude, and Bing Copilot. Enjoy seamless AI conversations and switch between Typingmind, Chathub, and Chatbox to enhance entertainment, information sourcing, or productivity.",
   keywords: "AIChatOne,ai chatone, aichatone web, Chrome extension, aichatone windows, aichatone mac, ChatGPT, Gemini, Claude, Bing Copilot, AI conversations, Typingmind, Chathub, Chatbox, chatbox desktop, chatbox windows, chat hub, chat box",
   // Add the canonical URL here
