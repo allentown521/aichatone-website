@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { CheckIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, MessageCircleIcon, SearchIcon, ImageIcon, MicIcon, FolderIcon, UploadIcon, PlugIcon, PenToolIcon, GlobeIcon } from "lucide-react"
+import { CheckIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, MessageCircleIcon, SearchIcon, ImageIcon, MicIcon, FolderIcon, UploadIcon, PlugIcon, PenToolIcon, GlobeIcon, LinkIcon, FilterIcon, LockIcon } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import Script from 'next/script'
@@ -150,8 +150,8 @@ return (
       <section id="home" className="text-center py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
         <h1 className="text-5xl font-bold mb-4 text-purple-800">All-in-One AI Assistant</h1>
         <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatOne is an all-in-one AI assistant with the most advanced AI models (GPT-4, Claude 3, Gemini, etc.) to help you Chat, Search, Write, Read and more. </p>
-        <div className="flex justify-center items-center space-x-2 mb-8">
-          <div className="flex -space-x-2 mr-2">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2 mb-8">
+          <div className="flex -space-x-2">
             {[1, 2, 3, 4, 5].map((avatar) => (
               <Image
                 key={avatar}
@@ -163,10 +163,12 @@ return (
               />
             ))}
           </div>
-          {[1, 2, 3, 4, 5].map((star) => (
-            <StarIcon key={star} className="w-5 h-5 text-yellow-400 fill-current" />
-          ))}
-          <span className="text-gray-600">(from 2k+ happy customers)</span>
+          <div className="flex items-center">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <StarIcon key={star} className="w-5 h-5 text-yellow-400 fill-current" />
+            ))}
+          </div>
+          <span className="text-gray-600 text-center md:text-left">(from 2k+ happy customers)</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <Button variant="default" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg">Try for free</Button>
@@ -196,18 +198,19 @@ return (
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">The Best AI Chatbots + Powerful Tools</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
-            { title: "Multiple AI Models", icon: <MessageCircleIcon className="w-8 h-8 text-purple-600" />, description: "Access various AI models for diverse capabilities." },
-            { title: "Web Search", icon: <SearchIcon className="w-8 h-8 text-purple-600" />, description: "Integrate real-time web information into your conversations." },
-            { title: "Custom AI Characters", icon: <PenToolIcon className="w-8 h-8 text-purple-600" />, description: "Create and interact with personalized AI characters." },
-            { title: "Prompt Library", icon: <FolderIcon className="w-8 h-8 text-purple-600" />, description: "Access a vast library of pre-written prompts for various tasks." },
-            { title: "Chat Folders", icon: <FolderIcon className="w-8 h-8 text-purple-600" />, description: "Organize your conversations with a structured folder system." },
-            { title: "Upload Data", icon: <UploadIcon className="w-8 h-8 text-purple-600" />, description: "Easily upload and reference your own data in conversations." },
+            { title: "Multiple AI Models", icon: <MessageCircleIcon className="w-8 h-8 text-purple-600" />, description: "Access various AI models for diverse capabilities" },
+            { title: "Web Access", icon: <GlobeIcon className="w-8 h-8 text-purple-600" />, description: "Integrate real-time web information into your conversations" },
+            { title: "Custom AI Characters", icon: <PenToolIcon className="w-8 h-8 text-purple-600" />, description: "Create and interact with personalized AI characters" },
+            { title: "Prompt Library", icon: <FolderIcon className="w-8 h-8 text-purple-600" />, description: "Access a vast library of pre-written prompts for various tasks" },
+            { title: "Chat Folders", icon: <FolderIcon className="w-8 h-8 text-purple-600" />, description: "Organize your conversations with a structured folder system" },
+            { title: "Upload docs", icon: <UploadIcon className="w-8 h-8 text-purple-600" />, description: "Instantly feed the AI important context by uploading a doc file right into the chat" },
             { title: "Speech to Text", icon: <MicIcon className="w-8 h-8 text-purple-600" />, description: "Convert spoken words to text with high accuracy." },
-            { title: "Image Generate", icon: <ImageIcon className="w-8 h-8 text-purple-600" />, description: "Create stunning visuals with AI-powered image generation." },
-            { title: "Plugins & Suggest Tool", icon: <PlugIcon className="w-8 h-8 text-purple-600" />, description: "Enhance functionality with plugins and smart suggestions." },
-            { title: "AI Search", icon: <SearchIcon className="w-8 h-8 text-purple-600" />, description: "Perform advanced searches powered by AI technology." },
-            { title: "Social Write", icon: <PenToolIcon className="w-8 h-8 text-purple-600" />, description: "Generate engaging content for social media platforms." },
-            { title: "Chat with Web page", icon: <GlobeIcon className="w-8 h-8 text-purple-600" />, description: "Interact with and analyze web pages through chat interface." },
+            //{ title: "Image Generate", icon: <ImageIcon className="w-8 h-8 text-purple-600" />, description: "Create stunning visuals with AI-powered image generation." },
+            { title: "Secure & Respect Your Privacy", icon: <LockIcon className="w-8 h-8 text-purple-600" />, description: "Api keys encrypted and stored locally. No in-app analytics. No middle servers. Your prompts are sent directly to OpenAI" },
+            { title: "AI Search", icon: <SearchIcon className="w-8 h-8 text-purple-600" />, description: "Get AI search result in the sidebar" },
+            { title: "Social Write", icon: <PenToolIcon className="w-8 h-8 text-purple-600" />, description: "Help you write for Twitter(X) & Reddit With AI" },
+            { title: "Chat with Web page", icon: <LinkIcon className="w-8 h-8 text-purple-600" />, description: "Summaries chat with web page  & Youtube" },
+            { title: "Search + Filter", icon: <FilterIcon className="w-8 h-8 text-purple-600" />, description: "Powerful search and filter so you can find any of your previous chats instantly" },
           ].map((feature, index) => (
             <Card key={index} className="p-6 bg-gray-100 hover:bg-gray-200 transition-colors duration-300 shadow-lg hover:shadow-xl">
               <div className="flex items-center mb-4">
@@ -233,24 +236,24 @@ return (
             <tbody>
               {[
                 "GPT-4 AI Model",
-                "Multiple AI Models available",
-                "Custom AI Characters",
-                "Prompt Library",
-                "Web Search",
-                "Upload Data",
-                "AI Search",
-                "Social Write",
-                "Plugins",
-                "ChatGPT Integration",
-                "Image Generation",
-                "Speech to Text",
+                "Web Access",
+                "Chat with Multiple Chatbots  at once",
                 "Chat with Web page",
+                "AI Assistant on any website & sidebar",
+                "Custom AI Characters",
+                "Search Enhance",
+                "Twitter (X) & Reddit AI Assistant",
+                "Webpage  & Youtube summary",
+                "Search / Filter Chats",
+                "Prompt Library",
                 "Chat Folders",
+                "ChatGPT temperature",
+                "Access to Claude 、Gemini、Llama 2、Perplexity、Mixtral、Gemma",
               ].map((feature, index) => (
                 <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                   <td className="py-3 px-4 border-b">{feature}</td>
                   <td className="py-3 px-4 text-center border-b">
-                    {index === 0 ? <CheckIcon className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-red-500">✕</span>}
+                    {index === 0 || index === 1 ? <CheckIcon className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-red-500">✕</span>}
                   </td>
                   <td className="py-3 px-4 text-center border-b">
                     <CheckIcon className="w-5 h-5 text-green-500 mx-auto" />
@@ -266,49 +269,58 @@ return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             {
-              text: "AIChatOne has revolutionized the way I work. Its intuitive interface and powerful features have significantly boosted my productivity.",
-              name: "John Doe",
-              title: "CEO, Tech Innovators Inc."
+              text: "I’m so amazed at what AIChatOne has allowed me to accomplish. Being able to organize my ChatGPT chats has been so nice. And the personas make it really easy to get better results than just using the generic assistant mode.",
+              name: "Paige Bliss",
+              title: "Author",
+              avatar: "/images/Paige-Bliss.png"
             },
             {
-              text: "The multiple AI models and custom characters feature in AIChatOne have opened up new possibilities for our creative team. It's an indispensable tool for our projects.",
-              name: "Jane Smith",
-              title: "Creative Director, Design Studio XYZ"
+              text: "AIChatOne is quickly becoming a daily go-to tool for myself and my team. I particularly love the personas which really help give me the best possible results.",
+              name: "Samarinda",
+              title: "Business Owner",
+              avatar: "/images/Samarinda.webp"
             },
             {
-              text: "As a researcher, the web search and data upload capabilities of AIChatOne have been game-changing. It's like having a super-intelligent research assistant at my fingertips.",
-              name: "Dr. Alex Johnson",
-              title: "Lead Researcher, Global Institute"
+              text: "Imagine if all the top generative AI tools were packaged in oneplace, with an easy-to-use interface, to save time and minimize frustration? That’s AIChatOne.",
+              name: "James Brook",
+              title: "Brook Creative Co.",
+              avatar: "/images/James-Brook.webp"
             },
             {
-              text: "The AI-powered image generation in AIChatOne has taken our marketing campaigns to the next level. We're creating stunning visuals in record time.",
-              name: "Emily Brown",
-              title: "Marketing Manager, Brand Solutions Co."
+              text: "I’ve used multiple AI tools in the past. Most have not given me the results that I wanted. AIChatOne has been more on than off and that’s amazing. I love thinking of something, typing out the idea, and seeing AIChatOne create content that can be used as-is or with slight tweaking. I can’t wait to see where AIChatOne goes from here.",
+              name: "Kim Reynold",
+              title: "AI Advantage Agency",
+              avatar: "/images/Kim-Reynold.jpeg"
             },
             {
-              text: "AIChatOne's speech-to-text feature has made our team meetings more productive. We can focus on discussion while the AI takes care of transcription.",
-              name: "Michael Lee",
-              title: "Team Lead, Agile Innovations"
+              text: "As an avid ChatGPT user, I am well aware of the platform’s limitations in terms of user interface and functionality. AIChatOne addresses these issues, and then some! I really like the ability to save prompts, edit conversations, and create different personas.  I’m just so much more productive with AIChatOne.",
+              name: "Shalone Cason",
+              title: "Author",
+              avatar: "/images/Shalone-Cason.webp"
             },
             {
-              text: "The integration of ChatGPT with additional features in AIChatOne provides a comprehensive solution for our customer service team. It's a game-changer for our operations.",
-              name: "Sarah Davis",
-              title: "Customer Experience Director, Service First Inc."
+              text: "AIChatOne is your fantastic AI-Powered copilot in chrome. You can chat with AIChatOne about anything, anywhere. While it may not have all the bells and whistles of some other ChatGPT products out there, it's incredibly polished and user-friendly. One of my favorite features is the ability to customize quick actions and prompts - with my own actions in place. Let AIChatOne help you create effortlessly. Highly recommend giving it a try!",
+              name: "Jamal Khan",
+              title: "Founder",
+              avatar: "/images/Jamal-Khan.webp"
             },
             {
-              text: "As a content creator, AIChatOne's Social Write feature has been a lifesaver. It helps me generate engaging posts across various platforms effortlessly.",
-              name: "Chris Wilson",
-              title: "Social Media Influencer"
+              text: "AIChatOne is everything you wish OpenAI was but isn’t. The most compelling reason why I love AIChatOne is having the ability to organize my prompts and chats in folders. This was a huge breath of digital fresh air for me as an AI user and as someone who manages the brands of my clients. My ONE word challenge to you is this: SUBSCRIBE. You won’t regret the AIChatOne Magic! 😎",
+              name: "leah mendez",
+              title: "Business Class",
+              avatar: "/images/leah-mendez.webp"
             },
             {
-              text: "The Chat with Web page feature has transformed how I analyze online content. It's like having an AI assistant to discuss and dissect web pages with me.",
-              name: "Lisa Chen",
-              title: "Digital Analyst, Web Insights Corp"
+              text: "I just wanted to leave a quick comment to say how impressed I am with this extension. The user interface is intuitive and easy to navigate, and the features are both useful and innovative. I especially appreciate the attention to detail in the design and the responsiveness of the extension. Overall, I'm very satisfied with my experience using",
+              name: "Adam",
+              title: "Best-Selling Author",
+              avatar: "/images/Adam.webp"
             },
             {
-              text: "AIChatOne's Prompt Library has been a treasure trove for our writing team. It's dramatically improved our efficiency and creativity in content generation.",
-              name: "Robert Taylor",
-              title: "Head of Content, Global Media Group"
+              text: "I personally use AIChatOne every day and it has drastically increased my productivity. I highly recommend that everyone give it a try. If you have any feedback or requests for new features, please let the team know by leaving a comment so they can continue to improve the product.",
+              name: "Abdulaziz Benjober",
+              title: "Nava Church Marketing",
+              avatar: "/images/Abdulaziz-Benjober.webp"
             }
           ].map((testimonial, index) => (
             <Card key={index} className="p-6 bg-gray-100 hover:bg-gray-200 transition-colors duration-300 shadow-lg hover:shadow-xl">
@@ -319,7 +331,7 @@ return (
               </div>
               <p className="text-gray-600 mb-4">{testimonial.text}</p>
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-300 rounded-full mr-4" />
+                <Image src={testimonial.avatar} alt={`${testimonial.name} avatar`} width={40} height={40} className="rounded-full mr-4" />
                 <div>
                   <p className="font-semibold">{testimonial.name}</p>
                   <p className="text-sm text-gray-600">{testimonial.title}</p>
@@ -455,7 +467,7 @@ return (
         </div>
         <div>
           <Image src="/images/toolpilot.svg?height=48&width=48" alt="TP Logo" width={48} height={48} />
-          <Image src="/images/aitoolnet.svg?height=48&width=48" alt="AIChatOne Logo" width={2640} height={96} className="mt-4" />
+          <Image src="/images/aitoolnet.svg?height=48&width=48" alt="AIChatOne Logo" width={264} height={96} className="mt-4" />
           <Image src="/images/theresanaiforthat.avif?height=48&width=48" alt="There's an AI for That Logo" width={264} height={96} className="mt-4" />
         </div>
       </div>
