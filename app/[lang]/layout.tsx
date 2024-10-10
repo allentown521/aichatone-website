@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'AIChatOne',
     images: [
       {
-        url: 'https://aichatone.com/og-image.jpg', // 替换为你的实际 OG 图片 URL
+        url: 'https://framerusercontent.com/images/5iMLpc3RvbViTmHDN5lCQvEy2w.png', // 替换为你的实际 OG 图片 URL
         width: 1200,
         height: 630,
         alt: 'AI Chat One Preview',
