@@ -1,11 +1,13 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Button } from "@/app/[lang]/components/ui/button"
+import { Card } from "@/app/[lang]/components/ui/card"
 import { CheckIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, MessageCircleIcon, SearchIcon, ImageIcon, MicIcon, FolderIcon, UploadIcon, PlugIcon, PenToolIcon, GlobeIcon, LinkIcon, FilterIcon, LockIcon } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import Script from 'next/script'
+import { Locale } from "@/i18n-config"
+import { getDictionary } from "@/get-dictionary"
 
 // 添加 Google Analytics 跟踪代码
 const GA_TRACKING_ID = 'G-F6D56ZXKCM' // 替换为您的 Google Analytics 跟踪 ID
@@ -71,7 +73,7 @@ const translations = {
   }
 }
 
-export function LandingPageComponent() {
+export async function LandingPageComponent({ lang,dictionary }: { lang: Locale,dictionary: any}) {
 const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 const [language, setLanguage] = useState('English')
 
@@ -103,7 +105,6 @@ const changeLanguage = (lang: string) => {
   // and possibly reload certain components or refetch data
 }
 
-const t = translations[language as keyof typeof translations]
 
 return (
   <div className="flex flex-col min-h-screen">
@@ -113,11 +114,11 @@ return (
         <span className="text-xl font-bold">AIChatOne</span>
       </div>
       <nav className="hidden md:flex space-x-4">
-        <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900">{t.home}</button>
-        <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900">{t.features}</button>
-        <button onClick={() => scrollToSection('testimonials')} className="text-gray-600 hover:text-gray-900">{t.testimonials}</button>
-        <button onClick={() => scrollToSection('compare')} className="text-gray-600 hover:text-gray-900">{t.compare}</button>
-        <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900">{t.faq}</button>
+        <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900">{dictionary.home}</button>
+        <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900">{dictionary.features}</button>
+        <button onClick={() => scrollToSection('testimonials')} className="text-gray-600 hover:text-gray-900">{dictionary.testimonials}</button>
+        <button onClick={() => scrollToSection('compare')} className="text-gray-600 hover:text-gray-900">{dictionary.compare}</button>
+        <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900">{dictionary.faq}</button>
       </nav>
       <div className="relative">
         <Button
@@ -149,7 +150,7 @@ return (
     <main className="flex-grow">
       <section id="home" className="text-center py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
         <h1 className="text-5xl font-bold mb-4 text-purple-800">All-in-One AI Assistant</h1>
-        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatOne is an all-in-one AI assistant with the most advanced AI models (GPT-4, Claude 3, Gemini, etc.) to help you Chat, Search, Write, Read and more</p>
+        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatOne is an all-in-one AI assistant with the most advanced AI models (GPT-4, Claude 3, Gemini, etc.) to help you Chat, Search, Write, Read and more. </p>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2 mb-8">
           <div className="flex -space-x-2">
             {[1, 2, 3, 4, 5].map((avatar) => (
@@ -196,7 +197,6 @@ return (
       </section>
       <section id="features" className="py-20 px-4 bg-gray-50">
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">The Best AI Chatbots + Powerful Tools</h2>
-        <p className="text-xl text-gray-600 mb-8 w-1/2 mx-auto">AIChatone gives you access to the worlds most advanced AI chabot models—not just one! You also get powerful features to add even more fuel to your AI-powered aresenal</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
             { title: "Multiple AI Models", icon: <MessageCircleIcon className="w-8 h-8 text-purple-600" />, description: "Access various AI models for diverse capabilities" },
