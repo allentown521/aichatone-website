@@ -37,6 +37,13 @@
                 "uriFormat": "%s",
                 "action": "debugWithChrome"
             }
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Next.js: debug client-side (Edge)",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
