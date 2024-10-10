@@ -28,8 +28,8 @@ const languageNames: { [key: string]: string } = {
   de: 'Deutsch',
   fr: 'Français',
   ja: '日本語',
-  zhCN: '简体中文',
-  zhTW: '繁體中文'
+  "zh-CN": '简体中文',
+  "zh-TW": '繁體中文'
 }
 
 export function LandingPageComponent({ lang,dictionary }: { lang: Locale,dictionary: any}) {
