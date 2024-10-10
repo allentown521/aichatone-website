@@ -77,7 +77,7 @@ return (
   <div className="flex flex-col min-h-screen">
     <header className="flex items-center justify-between p-4 sticky top-0 bg-white/80 backdrop-blur-md z-10 shadow-sm">
       <div className="flex items-center space-x-2">
-        <img src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
+        <Image src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
         <span className="text-xl font-bold">AIChatOne</span>
       </div>
       <nav className="hidden md:flex space-x-4">
