@@ -6,7 +6,7 @@ import type { Locale } from "./i18n-config";
 const dictionaries = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
   de: () => import("./dictionaries/de.json").then((module) => module.default),
-  jp: () => import("./dictionaries/jp.json").then((module) => module.default),
+  ja: () => import("./dictionaries/ja.json").then((module) => module.default),
   zhCN: () => import("./dictionaries/zhCN.json").then((module) => module.default),
   zhTW: () => import("./dictionaries/zhTW.json").then((module) => module.default),
 };
