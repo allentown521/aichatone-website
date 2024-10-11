@@ -78,6 +78,7 @@ return (
     <header className="flex items-center justify-between p-4 sticky top-0 bg-white/80 backdrop-blur-md z-10 shadow-sm">
       <div className="flex items-center space-x-2">
         <Image src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
+        <Image src="/images/avatar1.webp" alt="AIChatOne Logo" width={32} height={32} />
         <span className="text-xl font-bold">AIChatOne</span>
       </div>
       <nav className="hidden md:flex space-x-4">
@@ -123,7 +124,7 @@ return (
             {[1, 2, 3, 4, 5].map((avatar) => (
               <Image
                 key={avatar}
-                src={`/avatar${avatar}.webp`}
+                src={`/images/avatar${avatar}.webp`}
                 alt={`User avatar ${avatar}`}
                 width={32}
                 height={32}
