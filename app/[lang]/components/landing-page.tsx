@@ -77,7 +77,7 @@ return (
   <div className="flex flex-col min-h-screen">
     <header className="flex items-center justify-between p-4 sticky top-0 bg-white/80 backdrop-blur-md z-10 shadow-sm">
       <div className="flex items-center space-x-2">
-        <Image src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
+        <img src="/favicon.ico" alt="AIChatOne Logo" width={32} height={32} />
         <span className="text-xl font-bold">AIChatOne</span>
       </div>
       <nav className="hidden md:flex space-x-4">
@@ -121,7 +121,7 @@ return (
         <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2 mb-8">
           <div className="flex -space-x-2">
             {[1, 2, 3, 4, 5].map((avatar) => (
-              <Image
+              <img
                 key={avatar}
                 src={`/images/avatar${avatar}.webp`}
                 alt={`User avatar ${avatar}`}
@@ -156,7 +156,7 @@ return (
               className="bg-white hover:bg-gray-50 shadow-sm"
               onClick={() => window.open(browser.url, '_blank')}
             >
-              <Image src={browser.imageSrc} alt={`${browser.name} logo`} width={24} height={24} className="mr-2" />
+              <img src={browser.imageSrc} alt={`${browser.name} logo`} width={24} height={24} className="mr-2" />
               {browser.name}
             </Button>
           ))}
@@ -173,7 +173,7 @@ return (
             { title: dictionary.chatFolders, icon: <FolderIcon className="w-8 h-8 text-purple-600" />, description: dictionary.chatFoldersDsec },
             { title: dictionary.uploadDocs, icon: <UploadIcon className="w-8 h-8 text-purple-600" />, description: dictionary.uploadDocsDesc },
             { title: dictionary.speechToText, icon: <MicIcon className="w-8 h-8 text-purple-600" />, description: dictionary.speechToTextDsec },
-            //{ title: "Image Generate", icon: <ImageIcon className="w-8 h-8 text-purple-600" />, description: "Create stunning visuals with AI-powered image generation." },
+            //{ title: "Image Generate", icon: <imgIcon className="w-8 h-8 text-purple-600" />, description: "Create stunning visuals with AI-powered image generation." },
             { title: dictionary.securePrivacy, icon: <LockIcon className="w-8 h-8 text-purple-600" />, description: dictionary.securePrivacyDsec },
             { title: dictionary.aiSearch, icon: <SearchIcon className="w-8 h-8 text-purple-600" />, description: dictionary.aiSearchDsec },
             { title: dictionary.socialWrite, icon: <PenToolIcon className="w-8 h-8 text-purple-600" />, description: dictionary.socialWriteDesc },
@@ -299,7 +299,7 @@ return (
               </div>
               <p className="text-gray-600 mb-4">{testimonial.text}</p>
               <div className="flex items-center">
-                <Image src={testimonial.avatar} alt={`${testimonial.name} avatar`} width={40} height={40} className="rounded-full mr-4" />
+                <img src={testimonial.avatar} alt={`${testimonial.name} avatar`} width={40} height={40} className="rounded-full mr-4" />
                 <div>
                   <p className="font-semibold">{testimonial.name}</p>
                   <p className="text-sm text-gray-600">{testimonial.title}</p>
@@ -434,9 +434,9 @@ return (
           </ul>
         </div>
         <div>
-          <Image src="/images/toolpilot.svg?height=48&width=48" alt="TP Logo" width={48} height={48} />
-          <Image src="/images/aitoolnet.svg?height=48&width=48" alt="AIChatOne Logo" width={264} height={96} className="mt-4" />
-          <Image src="/images/theresanaiforthat.avif?height=48&width=48" alt="There's an AI for That Logo" width={264} height={96} className="mt-4" />
+          <img src="/images/toolpilot.svg?height=48&width=48" alt="TP Logo" width={48} height={48} />
+          <img src="/images/aitoolnet.svg?height=48&width=48" alt="AIChatOne Logo" width={264} height={96} className="mt-4" />
+          <img src="/images/theresanaiforthat.avif?height=48&width=48" alt="There's an AI for That Logo" width={264} height={96} className="mt-4" />
         </div>
       </div>
       <div className="max-w-6xl mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
