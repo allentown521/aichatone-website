@@ -146,7 +146,7 @@ return (
           {[
             { name: dictionary.addToChrome, imageSrc: "/images/chrome.png", url: "https://chrome.google.com/webstore/detail/ejlkdnjeljojepglcdjifkedjbfdakbb" },
             { name: dictionary.addToEdge, imageSrc: "/images/edge.png", url: "https://microsoftedge.microsoft.com/addons/detail/aichatone-your-ai-copil/gpophbebhcadnhofieemjpbkkiannbeb" },
-            { name: dictionary.webApp, imageSrc: "/images/internet.png", url: "https://web.aichatone.com/" },
+            { name: dictionary.webApp, imageSrc: "/images/internet.png", url: "https://chat.aichatone.com/" },
             { name: "Windows", imageSrc: "/images/windows.png", url: "https://github.com/allentown521/AIChatOne-archive/releases" },
             { name: "Mac", imageSrc: "/images/mac.png", url: "https://github.com/allentown521/AIChatOne-archive/releases" }
           ].map((browser) => (
