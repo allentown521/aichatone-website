@@ -140,7 +140,7 @@ return (
         </div>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <Button variant="default" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg">{dictionary.tryFree}</Button>
-          <Button variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-50 px-8 py-3 rounded-full text-lg">{dictionary.watchDemo}</Button>
+          <Button variant="outline" className="text-purple-600 hidden border-purple-600 hover:bg-purple-50 px-8 py-3 rounded-full text-lg">{dictionary.watchDemo}</Button>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {[
