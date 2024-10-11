@@ -383,31 +383,31 @@ return (
           <h4 className="font-semibold mb-4 text-lg text-purple-800">{dictionary.feature}</h4>
           <h5 className="font-medium mb-2 text-gray-700">{dictionary.aITools}</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="https://blog.aichatone.com/blog/how-to-access-gpt4-for-free" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.askGPT}</a></li>
-            <li><a href="https://blog.aichatone.com/blog/how-to-chat-with-all-chatbots" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.askMultipleAI}</a></li>
+            <li><a href="https://blog.aichatone.com/how-to-access-gpt4-for-free" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.askGPT}</a></li>
+            <li><a href="https://blog.aichatone.com/how-to-chat-with-all-chatbots" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.askMultipleAI}</a></li>
           </ul>
         </div>
         <div>
           <h5 className="font-medium mb-2 text-gray-700">{dictionary.productivity}</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="#https://blog.aichatone.com/blog/search-agent-better-faster-way-to-write" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.searchAgent}</a></li>
-            <li><a href="https://blog.aichatone.com/blog/search-enhance-with-chatgpt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.searchEnhance}</a></li>
-            <li><a href="https://blog.aichatone.com/blog/how-to-utilize-ai-for-10x-growth-twitter-x" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.twitterXAgent}</a></li>
-            <li><a href="https://blog.aichatone.com/blog/how-to-utilize-ai-for-10x-growth-reddit" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.redditAgent}</a></li>
+            <li><a href="https://blog.aichatone.com/search-agent-better-faster-way-to-write" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.searchAgent}</a></li>
+            <li><a href="https://blog.aichatone.com/search-enhance-with-chatgpt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.searchEnhance}</a></li>
+            <li><a href="https://blog.aichatone.com/how-to-utilize-ai-for-10x-growth-twitter-x" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.twitterXAgent}</a></li>
+            <li><a href="https://blog.aichatone.com/how-to-utilize-ai-for-10x-growth-reddit" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.redditAgent}</a></li>
           </ul>
         </div>
         <div>
           <h5 className="font-medium mb-2 text-gray-700">{dictionary.summary}</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="https://blog.aichatone.com/blog/youtube-summary-with-chatgpt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Youtube Summary</a></li>
-            <li><a href="https://blog.aichatone.com/blog/webpage-summary-with-chatgpt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Web Summary</a></li>
+            <li><a href="https://blog.aichatone.com/youtube-summary-with-chatgpt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Youtube Summary</a></li>
+            <li><a href="https://blog.aichatone.com/webpage-summary-with-chatgpt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Web Summary</a></li>
           </ul>
           <h5 className="font-medium mb-2 mt-4 text-gray-700">{dictionary.comparisons}</h5>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li><a href="https://blog.aichatone.com/blog/chathub-alternative" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">ChatHub vs AIChatOne</a></li>
-            <li><a href="https://blog.aichatone.com/blog/chatbox-alternative" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Chatbox vs AIChatOne</a></li>
-            <li><a href="https://blog.aichatone.com/blog/typingmind-alternative" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">TypingMind vs AIChatOne</a></li>
-            <li><a href="https://blog.aichatone.com/blog/choose-a-gpt-wrapper" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.whichProduct}</a></li>
+            <li><a href="https://blog.aichatone.com/chathub-alternative" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">ChatHub vs AIChatOne</a></li>
+            <li><a href="https://blog.aichatone.com/chatbox-alternative" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Chatbox vs AIChatOne</a></li>
+            <li><a href="https://blog.aichatone.com/typingmind-alternative" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">TypingMind vs AIChatOne</a></li>
+            <li><a href="https://blog.aichatone.com/choose-a-gpt-wrapper" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.whichProduct}</a></li>
           </ul>
         </div>
         <div>
