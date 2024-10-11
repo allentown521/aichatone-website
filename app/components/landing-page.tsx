@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from "@/app/[lang]/components/ui/button"
-import { Card } from "@/app/[lang]/components/ui/card"
+import { Button } from "@/app/components/ui/button"
+import { Card } from "@/app/components/ui/card"
 import { CheckIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, MessageCircleIcon, SearchIcon, ImageIcon, MicIcon, FolderIcon, UploadIcon, PlugIcon, PenToolIcon, GlobeIcon, LinkIcon, FilterIcon, LockIcon } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
@@ -32,11 +32,10 @@ const languageNames: { [key: string]: string } = {
   "zh-TW": '繁體中文'
 }
 
-export function LandingPageComponent({ lang,dictionary }: { lang: Locale,dictionary: any}) {
+export function LandingPageComponent() {
 const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 const pathname = usePathname();
 // 添加默认语言处理
-const validLang = languageNames[lang] ? lang : 'en'; // 如果 lang 无效，使用默认语言 'en'
 useEffect(() => {
   const handleScroll = () => {
   }
