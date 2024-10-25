@@ -430,18 +430,6 @@ return (
         <p className="text-sm text-gray-600">© 2024 AIChatOne. All rights reserved.</p>
       </div>
     </footer>
-    <Script
-      strategy="afterInteractive"
-      src={`https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID`}
-    />
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'YOUR_GA_MEASUREMENT_ID');
-      `}
-    </Script>
   </div>
 )
 }
