@@ -10,17 +10,6 @@ import { Locale } from "@/i18n-config"
 import { getDictionary } from "@/get-dictionary"
 import { usePathname } from "next/navigation"
 
-// 添加 Google Analytics 跟踪代码
-const GA_TRACKING_ID = 'G-F6D56ZXKCM' // 替换为您的 Google Analytics 跟踪 ID
-
-// 添加 pageview 函数
-const pageview = (url: string) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('config', GA_TRACKING_ID, {
-      page_path: url,
-    })
-  }
-}
 
 
 const languageNames: { [key: string]: string } = {
@@ -43,8 +32,6 @@ useEffect(() => {
 
   window.addEventListener('scroll', handleScroll)
 
-  // 添加 Google Analytics 页面浏览跟踪
-  pageview(window.location.pathname)
 
   return () => window.removeEventListener('scroll', handleScroll)
 }, [])

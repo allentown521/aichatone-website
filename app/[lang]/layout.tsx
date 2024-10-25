@@ -60,17 +60,9 @@ export default function RootLayout({
       >
         {children}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-F6D56ZXKCM`}
+          src="https://umami.aichatone.com/script.js" data-website-id="f2919cc6-2394-4136-8ec7-19cd4b36b0f3"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-F6D56ZXKCM');
-          `}
-        </Script>
       </body>
     </html>
   );
