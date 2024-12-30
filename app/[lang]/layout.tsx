@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";
 import { i18n, type Locale } from "../../i18n-config";
+import { getDictionary } from "@/get-dictionary";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -20,9 +21,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AI Chat One - Chat with AI Models",
   robots: "max-image-preview:large",
-  description: "Free Chrome extension for interactive chats with ChatGPT, Gemini, Claude, and Bing Copilot. Enjoy seamless AI conversations and switch between Typingmind, Chathub, and Chatbox to enhance entertainment, information sourcing, or productivity.",
   keywords: "AIChatOne,ai chatone, aichatone web, Chrome extension, aichatone windows, aichatone mac, ChatGPT, Gemini, Claude, Bing Copilot, AI conversations, Typingmind, Chathub, Chatbox, chatbox desktop, chatbox windows, chat hub, chat box",
   // Add the canonical URL here
   alternates: {
@@ -46,15 +45,27 @@ export const metadata: Metadata = {
   // ... other existing metadata ...
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: { lang: Locale };
 }>) {
+  const dictionary = await getDictionary(params.lang);
   return (
     <html lang={params.lang}>
+       <head>
+        <title>{dictionary?.pageTitle}</title>
+        <meta name="description" content={dictionary?.pageDescription} />
+        <link rel="alternate" hrefLang="en" href={`https://aichatone.com/en`} />
+        <link rel="alternate" hrefLang="zh-CN" href={`https://aichatone.com/zh-CN`} />
+        <link rel="alternate" hrefLang="zh-TW" href={`https://aichatone.com/zh-TW`} />
+        <link rel="alternate" hrefLang="ja" href={`https://aichatone.com/ja`} />
+        <link rel="alternate" hrefLang="de" href={`https://aichatone.com/de`} />
+        <link rel="alternate" hrefLang="fr" href={`https://aichatone.com/fr`} />
+        <link rel="alternate" hrefLang="x-default" href="https://aichatone.com" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
