@@ -427,7 +427,7 @@ return (
         </div>
       </div>
       <div className="max-w-6xl mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
-        <p className="text-sm text-gray-600">© 2024 AIChatOne. All rights reserved.</p>
+        <p className="text-sm text-gray-600">© {new Date().getFullYear()} Focus Apps LLC. All rights reserved.</p>
       </div>
     </footer>
   </div>
