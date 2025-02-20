@@ -21,6 +21,21 @@ const languageNames: { [key: string]: string } = {
   "zh-TW": '繁體中文'
 }
 
+// google ads 转化
+function gtag_report_conversion(url: string) {
+  const callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.open(url, '_blank')
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11065067122/l5WgCIvW-pwaEPKMnpwp',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
 export function LandingPageComponent({ lang,dictionary }: { lang: Locale,dictionary: any}) {
 const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 const pathname = usePathname();
@@ -141,7 +156,9 @@ return (
               key={browser.name}
               variant="outline"
               className="bg-white hover:bg-gray-50 shadow-sm"
-              onClick={() => window.open(browser.url, '_blank')}
+              onClick={() => {
+                gtag_report_conversion(browser.url)
+              }}
             >
               <img src={browser.imageSrc} alt={`${browser.name} logo`} width={24} height={24} className="mr-2" />
               {browser.name}
