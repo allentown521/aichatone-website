@@ -28,12 +28,16 @@ function gtag_report_conversion(url: string) {
       window.open(url, '_blank')
     }
   };
-  gtag('event', 'conversion', {
+  // 添加类型声明和安全检查
+  const gtagFunction = (window as any).gtag;
+  if (typeof gtagFunction === 'function') {
+    gtagFunction('event', 'conversion', {
       'send_to': 'AW-11065067122/l5WgCIvW-pwaEPKMnpwp',
       'value': 1.0,
       'currency': 'USD',
       'event_callback': callback
-  });
+    });
+  }
   return false;
 }
 export function LandingPageComponent({ lang,dictionary }: { lang: Locale,dictionary: any}) {
