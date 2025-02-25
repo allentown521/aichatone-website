@@ -425,7 +425,7 @@ return (
             <li><a href="https://docs.aichatone.com/getting-started/get-started-with-aichatone" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.pricing}</a></li>
             <li><a href="https://blog.aichatone.com/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.blog}</a></li>
             <li><a href="https://docs.aichatone.com/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.docs}</a></li>
-            <li><a href="mailto://product@aichatone.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.contact}</a></li>
+            <li><a href="mailto:product@aichatone.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.contact}</a></li>
             <li><a href="https://focus.hk.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.otherApps}</a></li>
             <li><a href="https://twitter.com/allentown521" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">Twitter (X)</a></li>
             <li><a href="https://shop.aichatone.com/affiliates" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">{dictionary.affiliates}</a></li>
