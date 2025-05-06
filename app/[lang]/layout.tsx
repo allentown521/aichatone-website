@@ -102,6 +102,12 @@ export default async function RootLayout({
             gtag('config', 'AW-11065067122');
           `}
         </Script>
+        <Script
+        id="google-ads"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6256483973048476`}
+          crossorigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
